@@ -17,5 +17,10 @@ mvn compile exec:java
 mvn compile test
 ```
 
+# Notes
+
+Using arrays for the card code as the question request the format returned be arrays. In a production system I'd be
+using Collections/Lists/Streams (depending on need) and not arrays.
+
 
 

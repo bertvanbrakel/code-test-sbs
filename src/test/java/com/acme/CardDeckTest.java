@@ -38,4 +38,13 @@ public class CardDeckTest
 
         assertEquals( 5, hand.length );
     }
+
+    @Test
+    public void question1_2_is_flush()
+    {
+        assertTrue( CardDeck.isFlush(new String[] { "5d", "2d", "10d", "ad" }));
+        assertTrue( CardDeck.isFlush(new String[] { "5c", "2c", "10c", "ac" }));
+
+        assertFalse( CardDeck.isFlush(new String[] { "5d", "2d", "10c" }));
+    }
 }

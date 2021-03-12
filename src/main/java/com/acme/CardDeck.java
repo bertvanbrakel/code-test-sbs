@@ -25,4 +25,21 @@ public class CardDeck
         return clone.subList(0, HAND_SIZE).toArray( new String[]{} );
     }
 
+    /**
+     * Test whether the given cards are a flush. A flush is a hand where all cards are of the same suit.
+     *
+     * Assumes the hand contains at least one card
+     *
+     */
+    public static boolean isFlush(String[] cards){
+        char currentSuit = extractSuit(cards[0]);
+        return Arrays.stream(cards).skip(1).filter(card->extractSuit(card) != currentSuit).findFirst().isEmpty();
+    }
+
+    private static char extractSuit(String rankAndSuite){
+        return rankAndSuite.charAt(rankAndSuite.length() -1);
+    }
+
+
+
 }
