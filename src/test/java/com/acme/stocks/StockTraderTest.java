@@ -20,17 +20,16 @@ public class StockTraderTest {
         var prices = priceHistory(300, 250, 260, 310, 215, 280);
         var trades = new StockTrader().trade(prices);
 
-        System.out.println("for price input " + Arrays.toString(prices));
-        System.out.println("trades are \n" + trades.toJSON());
+        System.out.println("* question_1_4_example *");
+        System.out.println("   for price input " + Arrays.toString(prices));
+        System.out.println("   trades are \n" + trades.toJSON());
 
-        var tx0 = trades.getTransaction(0);
-        assertThat(tx0)
+        assertThat(trades.getTransaction(0))
                 .hasBoughtDay(2).hasBoughtValue(250)
                 .hasSoldDay(4).hasSoldValue(310)
                 .hasProfit(60);
 
-        var tx1 = trades.getTransaction(1);
-        assertThat(tx1)
+        assertThat(trades.getTransaction(1))
                 .hasBoughtDay(5).hasBoughtValue(215)
                 .hasSoldDay(6).hasSoldValue(280)
                 .hasProfit(65);
@@ -44,23 +43,21 @@ public class StockTraderTest {
         var prices = priceHistory(360, 255, 260, 230, 150, 100, 135, 265, 750, 460, 600);
         var trades = new StockTrader().trade(prices);
 
-        System.out.println("for price input " + Arrays.toString(prices));
-        System.out.println("trades are \n" + trades.toJSON());
+        System.out.println("* question_1_4_test *");
+        System.out.println("   for price input " + Arrays.toString(prices));
+        System.out.println("   trades are \n" + trades.toJSON());
 
-        var tx0 = trades.getTransaction(0);
-        assertThat(tx0)
+        assertThat(trades.getTransaction(0))
                 .hasBoughtDay(2).hasBoughtValue(255)
                 .hasSoldDay(3).hasSoldValue(260)
                 .hasProfit(5);
 
-        var tx1 = trades.getTransaction(1);
-        assertThat(tx1)
+        assertThat(trades.getTransaction(1))
                 .hasBoughtDay(6).hasBoughtValue(100)
                 .hasSoldDay(9).hasSoldValue(750)
                 .hasProfit(650);
 
-        var tx2 = trades.getTransaction(2);
-        assertThat(tx2)
+        assertThat(trades.getTransaction(2))
                 .hasBoughtDay(10).hasBoughtValue(460)
                 .hasSoldDay(11).hasSoldValue(600)
                 .hasProfit(140);

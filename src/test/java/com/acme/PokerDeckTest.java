@@ -6,9 +6,7 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.stream.Stream;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.*;
 
 public class PokerDeckTest {
     @Test
@@ -38,6 +36,10 @@ public class PokerDeckTest {
 
         assertEquals("correct hand size", 5, hand.length);
         assertEquals("no duplicates", 5, Stream.of(hand).distinct().count());
+
+        System.out.println("* question1_1_generate_random_hand *");
+        System.out.println("   Generated hand: " + Arrays.toString(hand));
+        System.out.println("   Is straight or straight flush: " + PokerDeck.isStraight(hand));
     }
 
     @Test

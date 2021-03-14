@@ -38,10 +38,18 @@ public class TransactionHistory {
 
     @Override
     public String toString() {
-        return toJSON();
+        // We could be more elegant here and use apache commons lang's ToStringBuilder. But this is
+        //quick and dirty for now.
+        try {
+            return toJSON();
+        } catch (RuntimeException e) {
+            return super.toString();
+        }
     }
 
     public String toJSON() {
+        //NOTE: for now we do it in class, but if this gets bigger or we do it more often we'd want
+        //to pull this out into a separate class. Alternatively use json annotations on all the classes
         try {
             var mapper = new ObjectMapper();
             var node = node(mapper, this);

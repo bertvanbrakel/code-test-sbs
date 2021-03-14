@@ -9,12 +9,13 @@ import static com.google.common.primitives.Ints.tryParse;
 import static java.util.Arrays.stream;
 import static java.util.stream.Collectors.toList;
 
-
 public class PokerDeck {
     private static final int HAND_SIZE = 5;
 
     /**
      * Return a full deck of cards in no particular order. No jokers
+     *
+     * <p>NOTE:in a real system I'd likely turn the array of strings into a Collection of Card's.</p>
      */
     public static String[] getFullDeck() {
         var suits = Arrays.asList( /* spades*/ "s", /* hearts */ "h", /* clubs */ "c", /* diamonds*/ "d");
@@ -59,7 +60,7 @@ public class PokerDeck {
      * Return if the given hand is a continuous sequence.
      * <p>
      * NOTE: Should be 'isSequence' but reduced to get code char count down
-     *
+     * </p>
      * @param h - the hand, sorted by rank order (shortened to reduce code count)
      */
     private static boolean s(List<Integer> h) {
@@ -76,6 +77,7 @@ public class PokerDeck {
      * Extract the card rank order.
      * <p>
      * NOTE: Yes, we're using single letter function to reduce the code char  count
+     * </p>
      *
      * @param c - the card
      * @return the rank order. A Jack is 11, Queen 12, King 13, Ace 14
