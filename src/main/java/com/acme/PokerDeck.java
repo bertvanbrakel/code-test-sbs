@@ -40,6 +40,7 @@ public class PokerDeck {
         var shuffled = Arrays.asList(deck);
         Collections.shuffle(shuffled);
 
+        //pick the hand out of the shuffled deck
         return shuffled.subList(0, HAND_SIZE).toArray(new String[]{});
     }
 
@@ -61,6 +62,7 @@ public class PokerDeck {
      * <p>
      * NOTE: Should be 'isSequence' but reduced to get code char count down
      * </p>
+     *
      * @param h - the hand, sorted by rank order (shortened to reduce code count)
      */
     private static boolean s(List<Integer> h) {

@@ -17,12 +17,12 @@ public class BlocksTest {
      */
     @Test
     public void max_right_height() {
-        assertEquals(1, Blocks.maxHeightRight(blocks(1, 0, 1), 0));
-        assertEquals(1, Blocks.maxHeightRight(blocks(1, 0, 1), 1));
-        assertEquals(0, Blocks.maxHeightRight(blocks(1, 0, 1), 2));
+        assertEquals(1, Blocks.calculateMaxHeightRight(blocks(1, 0, 1), 0));
+        assertEquals(1, Blocks.calculateMaxHeightRight(blocks(1, 0, 1), 1));
+        assertEquals(0, Blocks.calculateMaxHeightRight(blocks(1, 0, 1), 2));
 
-        assertEquals(2, Blocks.maxHeightRight(blocks(1, 0, 2), 0));
-        assertEquals(2, Blocks.maxHeightRight(blocks(1, 0, 2), 1));
+        assertEquals(2, Blocks.calculateMaxHeightRight(blocks(1, 0, 2), 0));
+        assertEquals(2, Blocks.calculateMaxHeightRight(blocks(1, 0, 2), 1));
     }
 
     /**

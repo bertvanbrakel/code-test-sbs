@@ -11,14 +11,14 @@ public class StockTraderTest {
 
     @Test
     public void no_price_history() {
-        var trades = new StockTrader().trade(priceHistory());
+        var trades = new StockTrader().calculateMaxProfitTrades(priceHistory());
         assertEquals(0, trades.getNumTransactions());
     }
 
     @Test
     public void question_1_4_example() {
         var prices = priceHistory(300, 250, 260, 310, 215, 280);
-        var trades = new StockTrader().trade(prices);
+        var trades = new StockTrader().calculateMaxProfitTrades(prices);
 
         System.out.println("* question_1_4_example *");
         System.out.println("   for price input " + Arrays.toString(prices));
@@ -41,7 +41,7 @@ public class StockTraderTest {
     @Test
     public void question_1_4_test() {
         var prices = priceHistory(360, 255, 260, 230, 150, 100, 135, 265, 750, 460, 600);
-        var trades = new StockTrader().trade(prices);
+        var trades = new StockTrader().calculateMaxProfitTrades(prices);
 
         System.out.println("* question_1_4_test *");
         System.out.println("   for price input " + Arrays.toString(prices));
